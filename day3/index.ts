@@ -4,7 +4,8 @@ import { DiagnosticMarchine } from "./diagnostic-machine";
 const readInput = (): string[] => readFileSync('./day3/input.txt', 'utf-8').split('\n');
 const rawData = readInput();
 
-const diagnostic = new DiagnosticMarchine(rawData);
-diagnostic.processData();
+const diagnostic = new DiagnosticMarchine();
+diagnostic.processData(rawData);
 
-console.log(diagnostic.result);
+const powerConsumption = diagnostic.calculatePowerConsumption();
+console.log(powerConsumption);
